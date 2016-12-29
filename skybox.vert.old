@@ -1,0 +1,22 @@
+
+#version 150
+/*
+in vec3 vp;
+uniform mat4 P_matrix, V_matrix;
+out vec3 texcoords;
+
+void main (void) {
+  texcoords = vp;
+  gl_Position = P * V * vec4 (vp, 1.0);
+}
+*/
+
+
+in vec3 a_vertex;
+uniform mat4 P_matrix, V_matrix;
+out vec3 texcoords;
+
+void main (void) {
+  texcoords = a_vertex;
+  gl_Position = P * V * vec4 (a_vertex, 1.0);
+}

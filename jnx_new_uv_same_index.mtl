@@ -1,0 +1,14 @@
+newmtl jnx_new_uv:initialShadingGroup
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd test.bmp
+Ni 1.00
+newmtl wang2:initialShadingGroup
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.20 0.20 0.20
+Tf 1.00 1.00 1.00
+map_Kd test.png
+Ni 1.00
