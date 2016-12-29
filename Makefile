@@ -136,13 +136,13 @@ Audio.o: Audio.h Audio.cpp usr/local/lib/libao.la usr/local/lib/libmpg123.la
 	g++ $(DEFS) $(CPPFLAGS) $(AUDIO_INCLUDE) -c Audio.cpp
 
 usr/local/lib/libcal3d.la : ${PWD}/usr/local
-	mkdir -p usr/local && tar -zvxf cal3d-0.11.0.tar.gz && cd cal3d-0.11.0 && ./configure --prefix ${PWD}/usr/local && make && make install && touch cal3d
+	mkdir -p usr/local && tar -zvxf cal3d-0.11.0.tar.gz && cd cal3d-0.11.0 && ./configure --prefix ${PWD}/usr/local && echo "#include <cstring>" >> config.h && echo "#include <memory>" >> config.h && make clean && make && make install && touch cal3d
 
 usr/local/lib/libao.la : ${PWD}/usr/local
-	tar -zxvf libao-1.2.0.tar.gz && cd libao-1.2.0 && ./configure --prefix ${PWD}/usr/local && make && make install
+	tar -zxvf libao-1.2.0.tar.gz && cd libao-1.2.0 && ./configure --prefix ${PWD}/usr/local && make clean && make && make install
 
 usr/local/lib/libmpg123.la : ${PWD}/usr/local
-	tar -xvf mpg123-1.22.2.tar && cd mpg123-1.22.2 && ./configure --prefix ${PWD}/usr/local && make && make install	
+	tar -xvf mpg123-1.22.2.tar && cd mpg123-1.22.2 && ./configure --prefix ${PWD}/usr/local && make clean && make && make install	
 
 
 ${PWD}/usr/local : cal3d-0.11.0.tar.gz mpg123-1.22.2.tar libao-1.2.0.tar.gz
