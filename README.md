@@ -6,6 +6,7 @@ Should compile on OSX and Linux with the command "make" in the folder
 to run type from a bash shell in the folder
 
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${PWD}/usr/local/lib"
+
 ./assign3
 
 
