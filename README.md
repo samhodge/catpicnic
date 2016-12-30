@@ -9,4 +9,5 @@ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${PWD}/usr/local/lib"
 
 ./assign3
 
+(requires OpenGL GLSL 1.5)
 
