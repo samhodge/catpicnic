@@ -1,4 +1,4 @@
 #!/usr/bin/env tcsh
-setenv LD_LIBRARY_PATH /asset/common/software/thirdparty/glew/1.5.1-build3/arch/linux-centos5_2/x86_64/lib:/home/samh/cg/assignment3/usr/local/lib/
-cd /home/samh/cg/assignment3
-./skymap_ocean_cat_wander_island
+set PROJECT_DIR=`pwd` # /home/samh/cg/assignment3
+setenv LD_LIBRARY_PATH /asset/common/software/thirdparty/glew/1.5.1-build3/arch/linux-centos5_2/x86_64/lib:${PROJECT_DIR}/usr/local/lib/
+./$1

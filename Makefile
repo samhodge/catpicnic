@@ -38,13 +38,17 @@ ifneq (, $(findstring chile, $(HOSTNAME)))
 endif
 
 
+# CAL3D
 CAL3D = -I${PWD}/usr/local/include -L${PWD}/usr/local/lib 
 CAL3D += -L${PWD}/usr/local/include/cal3d -lcal3d 
 
+# AO and MPG123 (Audio)
 AUDIO_INCLUDE = -I${PWD}/usr/local/include
 AUDIO_LIBS = -L${PWD}/usr/local/include -lao -lmpg123
-    
-OPENSTEER = -I${PWD}/opensteer-code/include 
+
+# OpenSteer
+OPENSTEER = -I${PWD}/opensteer-code/include
+
 LINK +=   sh_matrix.o shader.o tga.o viewer.o tick.o wander.o
 
 .PHONY:  clean
@@ -74,13 +78,13 @@ assign3$(EXT) : $(LINK6) usr/local/lib/libcal3d.la usr/local/lib/libao.la usr/lo
 
 wander_test$(EXT) : wander.o cat_test.cpp usr/local/lib/libcal3d.la
 	g++ $(DEFS) -o wander_test wander.o cat_test.cpp
-	
+
 viewer$(EXT) : $(LINK) usr/local/lib/libcal3d.la
 	g++ $(DEFS) -o viewer main.cpp $(LINK) $(GL_LIBS) $(CAL3D)
 
 tga.o : tga.cpp tga.h usr/local/lib/libcal3d.la
 	g++ $(DEFS) $(CAL3D) -c tga.cpp
-	
+
 tick.o : tick.cpp tick.h usr/local/lib/libcal3d.la
 	g++ $(DEFS) $(CAL3D) -c tick.cpp 
 
@@ -92,10 +96,10 @@ shader.o : shader.cpp shader.h
 
 sh_matrix.o : sh_matrix.h sh_matrix.cpp
 	g++ $(DEFS) $(GL_LIBS) -c sh_matrix.cpp
-	
+
 wander.o : wander.cpp wander.h
 	g++ $(DEFS)$(GL_LIBS)  -c wander.cpp
-	
+
 Simplex.o : Simplex.cpp Simplex.hpp
 	g++ $(DEFS) $(GL_LIBS) -c Simplex.cpp
 
@@ -126,7 +130,7 @@ skymap_ocean_cat_wander_island.o: skymap_ocean_cat_wander_island.cpp usr/local/l
 cubemap.o: cubemap.cpp cubemap.h
 	g++ $(DEFS) $(CPPFLAGS) $(GL_LIBS) -c cubemap.cpp
 
-cat.o: cat.h cat.cpp
+cat.o: cat.h cat.cpp usr/local/lib/libcal3d.la
 	g++ $(DEFS) $(CPPFLAGS) $(CAL3D) $(GL_LIBS) -c cat.cpp
 
 Island.o: Island.h Island.cpp
@@ -150,6 +154,6 @@ ${PWD}/usr/local : cal3d-0.11.0.tar.gz mpg123-1.22.2.tar libao-1.2.0.tar.gz
 
 opensteer-demo:
 	g++ opensteer-code/src/*.cpp opensteer-code/src/*.c opensteer-code/plugins/*.cpp -o opensteer-demo ${OPENSTEER} ${DEFS} ${GL_LIBS}
-	
+
 clean:
-	rm -rf *.o assign3$(EXT) usr  cal3d-0.11.0
+	rm -rf *.o assign3$(EXT) usr cal3d-0.11.0 libao-1.2.0 mpg123-1.22.2
