@@ -11,3 +11,4 @@ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${PWD}/usr/local/lib"
 
 (requires OpenGL GLSL 1.5)
 
+For video please see https://www.youtube.com/watch?v=uyHcB6jEibQ
