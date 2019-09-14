@@ -158,7 +158,7 @@ void Skybox::render()
 	if ( setUniformMatrix( progID,
                            "M_matrix",
                            glm::value_ptr(modelMatrix) ) ) {
-        std::cout << "Couldnt find M_matrix in skybox shader" << std::cout;
+        std::cout << "Couldnt find M_matrix in skybox shader" << std::endl;
         return;
     }
 
@@ -170,13 +170,13 @@ void Skybox::render()
 	if ( setUniformMatrix( progID,
                            "V_matrix",
                            glm::value_ptr(viewMatrix) ) ) {
-        std::cout << "Couldnt find V_matrix in skybox shader" << std::cout;
+        std::cout << "Couldnt find V_matrix in skybox shader" << std::endl;
         return;
     }
     if ( setUniformMatrix( progID,
                            "P_matrix",
                            glm::value_ptr(projectionMatrix) ) ) {
-        std::cout << "Couldnt find P_matrix in skybox shader" << std::cout;
+        std::cout << "Couldnt find P_matrix in skybox shader" << std::endl;
         return;
     }
     
