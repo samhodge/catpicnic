@@ -15,7 +15,6 @@ jobs:
       - run:
           name: Install GL toolchain
           command: 'apt-get update && sudo apt-get install -y freeglut3 libglew1.5-dev freeglut3-dev libglew1.5 libglu1-mesa libglu1-mesa-dev libgl1-mesa-glx libgl1-mesa-dev'
-
       - run:
           name: build
           command: 'make all'
@@ -25,12 +24,11 @@ jobs:
     steps: # a series of commands to run
       - checkout
       - run:
-          name: Install brew
+          name: Install brew MacOS
           command: '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
       - run:
-          name: Install GL toolchain
+          name: Install GL toolchain MacOS
           command: 'brew install glew'
-
       - run:
-          name: build
+          name: build-macos
           command: 'make all'
