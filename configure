@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
+apt-get update && sudo apt-get install -y build-essential
+apt-get update && sudo apt-get install -y freeglut3 libglew1.5-dev freeglut3-dev libglew1.5 libglu1-mesa libglu1-mesa-dev libgl1-mesa-glx libgl1-mesa-dev
+
+echo "Done Configuring"

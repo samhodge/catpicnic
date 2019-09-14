@@ -157,3 +157,6 @@ opensteer-demo:
 
 clean:
 	rm -rf *.o assign3$(EXT) usr cal3d-0.11.0 libao-1.2.0 mpg123-1.22.2
+
+test:
+	echo "No tests for you!"
