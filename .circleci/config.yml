@@ -19,3 +19,18 @@ jobs:
       - run:
           name: build
           command: 'make all'
+  build: # runs not using `Workflows` must have a `build` job as entry point
+    macos:  # indicate that we are using the macOS executor
+      xcode: "9.0.0" # indicate our selected version of Xcode
+    steps: # a series of commands to run
+      - checkout
+      - run:
+          name: Install brew
+          command: '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+      - run:
+          name: Install GL toolchain
+          command: 'brew install glew'
+
+      - run:
+          name: build
+          command: 'make all'
