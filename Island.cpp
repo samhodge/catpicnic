@@ -185,7 +185,7 @@ void Island::render()
 	if ( setUniformMatrix( progID,
                            "M_matrix",
                            glm::value_ptr(modelMatrix) ) ) {
-        std::cout << "Couldnt find M_matrix in skybox shader" << std::cout;
+        std::cout << "Couldnt find M_matrix in skybox shader" << std::endl;
         return;
     }
 
@@ -194,7 +194,7 @@ void Island::render()
   if ( setUniformMatrix3( progID,
                            "m_3x3_inv_transp",
                            glm::value_ptr(m_3x3_inv_transp) ) ) {
-        std::cout << "Couldnt find m_3x3_inv_transp in ocean shader" << std::cout;
+        std::cout << "Couldnt find m_3x3_inv_transp in ocean shader" << std::endl;
         return;
     }
     */
@@ -204,13 +204,13 @@ void Island::render()
 	if ( setUniformMatrix( progID,
                            "V_matrix",
                            glm::value_ptr(viewMatrix) ) ) {
-        std::cout << "Couldnt find V_matrix in ocean shader" << std::cout;
+        std::cout << "Couldnt find V_matrix in ocean shader" << std::endl;
         return;
     }
     if ( setUniformMatrix( progID,
                            "P_matrix",
                            glm::value_ptr(projectionMatrix) ) ) {
-        std::cout << "Couldnt find P_matrix in ocean shader" << std::cout;
+        std::cout << "Couldnt find P_matrix in ocean shader" << std::endl;
         return;
     }
     
