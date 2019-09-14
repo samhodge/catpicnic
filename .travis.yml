@@ -1,6 +1,16 @@
 language: c++
-before install:
-   - sudo apt-get update
-   - sudo apt-get install -y build-essentials
-   - sudo apt-get update
-   - sudo apt-get install -y freeglut3 libglew1.5-dev freeglut3-dev libglew1.5 libglu1-mesa libglu1-mesa-dev libgl1-mesa-glx libgl1-mesa-dev
+os: linux
+dist: xenial
+compiler: gcc
+addons:
+  apt:
+    packages:
+      - freeglut3
+      - libglew1.5-dev
+      - freeglut3-dev
+      - freeglut3-dev
+      - libglew1.5
+      - libglu1-mesa
+      - libglu1-mesa-dev
+      - libgl1-mesa-glx
+      - libgl1-mesa-dev
