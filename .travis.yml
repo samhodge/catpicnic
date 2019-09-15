@@ -23,4 +23,4 @@ before_install:
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install glew; fi
 
 script:
-  - make install
+  - make
