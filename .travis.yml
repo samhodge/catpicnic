@@ -1,5 +1,8 @@
 language: c++
-os: linux
+os:
+  - linux
+  - osx
+
 dist: xenial
 compiler: gcc
 addons:
@@ -14,3 +17,10 @@ addons:
       - libglu1-mesa-dev
       - libgl1-mesa-glx
       - libgl1-mesa-dev
+
+before_install:
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update          ; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install glew; fi
+
+script:
+  - make install
